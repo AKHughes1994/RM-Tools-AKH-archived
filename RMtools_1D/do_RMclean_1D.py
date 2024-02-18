@@ -240,6 +240,10 @@ def run_rmclean(
             "FDF Noise (Corrected MAD) = %.4g %s"
             % (mDict_cl["dFDFcorMAD"], mDict["units"])
         )
+        log(
+            "FDF Noise (RMS) = %.4g %s"
+            % (mDict_cl["dFDFrms"], mDict["units"])
+        )
 
         log("FDF SNR = %.4g " % (mDict_cl["snrPIfit"]))
         log()

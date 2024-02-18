@@ -181,16 +181,16 @@ def run_rmclean(
     # Measure the complexity of the clean component spectrum
     mDict_cl["mom2CCFDF"] = measure_fdf_complexity(phiArr=phiArr_radm2, FDF=ccArr)
 
-    # Calculating observed errors (based on dFDFcorMAD)
+    # Calculating observed errors (based on dFDFcorMAD) -- Changed to dFDFrms by Hughes
     mDict_cl["dPhiObserved_rm2"] = (
-        mDict_cl["dPhiPeakPIfit_rm2"] * mDict_cl["dFDFcorMAD"] / mDict["dFDFth"]
+        mDict_cl["dPhiPeakPIfit_rm2"] * mDict_cl["dFDFrms"] / mDict["dFDFth"]
     )
     mDict_cl["dAmpObserved"] = mDict_cl["dFDFcorMAD"]
     mDict_cl["dPolAngleFitObserved_deg"] = (
-        mDict_cl["dPolAngleFit_deg"] * mDict_cl["dFDFcorMAD"] / mDict["dFDFth"]
+        mDict_cl["dPolAngleFit_deg"] * mDict_cl["dFDFrms"] / mDict["dFDFth"]
     )
     mDict_cl["dPolAngleFit0Observed_deg"] = (
-        mDict_cl["dPolAngle0Fit_deg"] * mDict_cl["dFDFcorMAD"] / mDict["dFDFth"]
+        mDict_cl["dPolAngle0Fit_deg"] * mDict_cl["dFDFrms"] / mDict["dFDFth"]
     )
 
     if verbose:

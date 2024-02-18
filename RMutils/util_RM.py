@@ -946,14 +946,17 @@ def measure_FDF_parms(
     FDFmsked = FDF.copy()
     FDFmsked[iL:iR] = np.nan
     FDFmsked = FDFmsked[np.where(FDFmsked == FDFmsked)]
+    absFDFmsked = abs(FDFmsked)
     if float(len(FDFmsked)) / len(FDF) < 0.3:
         dFDFcorMAD = MAD(np.concatenate((np.real(FDF), np.imag(FDF))))
+        dFDFrms = np.sqrt( np.mean(absFDF**2) ) # added by hughes
     else:
         dFDFcorMAD = MAD(np.concatenate((np.real(FDFmsked), np.imag(FDFmsked))))
+        dFDFrms = np.sqrt( np.mean(absFDFmsked**2) )
 
     # Default to using the measured FDF if a noise value has not been provided
     if dFDF is None:
-        dFDF = dFDFcorMAD
+        dFDF = dFDFrms
 
     nChansGood = np.sum(np.where(lamSqArr_m2 == lamSqArr_m2, 1.0, 0.0))
     varLamSqArr_m2 = (

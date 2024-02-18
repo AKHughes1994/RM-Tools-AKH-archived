@@ -489,6 +489,7 @@ def run_rmsynth(
         log("QU Noise = %.4g %s" % (mDict["dQU"], units))
         log("FDF Noise (theory)   = %.4g %s" % (mDict["dFDFth"], units))
         log("FDF Noise (Corrected MAD) = %.4g %s" % (mDict["dFDFcorMAD"], units))
+        log("FDF Noise (RMS) = %.4g %s" % (mDict["dFDFrms"], units))
         log("FDF SNR = %.4g " % (mDict["snrPIfit"]))
         log(
             "sigma_add(q) = %.4g (+%.4g, -%.4g)"

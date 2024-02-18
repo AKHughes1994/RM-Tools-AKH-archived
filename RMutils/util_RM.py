@@ -1034,6 +1034,7 @@ def measure_FDF_parms(
     # Store the measurements in a dictionary and return
     mDict = {
         "dFDFcorMAD": toscalar(dFDFcorMAD),
+        "dFDFrms": toscalar(dFDFrms),
         "phiPeakPIfit_rm2": toscalar(phiPeakPIfit),
         "dPhiPeakPIfit_rm2": toscalar(dPhiPeakPIfit),
         "ampPeakPIfit": toscalar(ampPeakPIfit),

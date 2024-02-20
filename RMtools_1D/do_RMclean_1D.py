@@ -177,6 +177,7 @@ def run_rmclean(
     )
     mDict_cl["cleanCutoff"] = cutoff
     mDict_cl["nIter"] = int(iterCountArr)
+    mDict_cl['freq0_GHz'] = mDict["freq0_Hz"] / 1e9
 
     # Measure the complexity of the clean component spectrum
     mDict_cl["mom2CCFDF"] = measure_fdf_complexity(phiArr=phiArr_radm2, FDF=ccArr)

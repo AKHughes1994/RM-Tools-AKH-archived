@@ -177,7 +177,8 @@ def run_rmclean(
     )
     mDict_cl["cleanCutoff"] = cutoff
     mDict_cl["nIter"] = int(iterCountArr)
-    mDict_cl['freq0_GHz'] = mDict["freq0_Hz"] / 1e9
+    mDict_cl['freq0_GHz'] = mDict["freq0_Hz"] / 1e9 # Added by Hughes
+    mDict_cl["Ifreq0"] = mDict["Ifreq0"] # Added by Hughes 
 
     # Measure the complexity of the clean component spectrum
     mDict_cl["mom2CCFDF"] = measure_fdf_complexity(phiArr=phiArr_radm2, FDF=ccArr)
@@ -340,7 +341,7 @@ def saveOutput(mDict_cl, aDict_cl, prefixOut="", verbose=False, log=print):
         elif isinstance(v, np.bool_):
             mDict_cl[k] = bool(v)
 
-    json.dump(mDict_cl, open(outFile, "w"))
+    json.dump(mDict_cl, open(outFile, "w"), indent=4) # Modified by Hughes
 
 
 def readFiles(fdfFile, rmsfFile, weightFile, rmSynthFile, nBits):

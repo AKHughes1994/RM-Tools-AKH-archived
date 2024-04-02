@@ -250,7 +250,7 @@ def run_rmclean(
             % (mDict_cl["dFDFrms"], mDict["units"])
         )
 
-        log("FDF SNR = %.4g (%.4 observed)" % (mDict_cl["snrPIfit"],mDict_cl["snrPIfitObserved"]))
+        log("FDF SNR = %.4g (%.4g observed)" % (mDict_cl["snrPIfit"],mDict_cl["snrPIfitObserved"]))
         log()
         log("-" * 80)
 

@@ -194,6 +194,9 @@ def run_rmclean(
     mDict_cl["dPolAngleFit0Observed_deg"] = (
         mDict_cl["dPolAngle0Fit_deg"] * mDict_cl["dFDFrms"] / mDict["dFDFth"]
     )
+    mDict_cl["snrPIfitObserved"] = (
+        mDict_cl["snrPIfit"] * mDict_cl["dFDFrms"] / mDict["dFDFth"]
+    )
 
     if verbose:
         # Print the results to the screen
@@ -247,7 +250,7 @@ def run_rmclean(
             % (mDict_cl["dFDFrms"], mDict["units"])
         )
 
-        log("FDF SNR = %.4g " % (mDict_cl["snrPIfit"]))
+        log("FDF SNR = %.4g (%.4 observed)" % (mDict_cl["snrPIfit"],mDict_cl["snrPIfitObserved"]))
         log()
         log("-" * 80)
 

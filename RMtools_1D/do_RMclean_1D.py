@@ -195,7 +195,7 @@ def run_rmclean(
         mDict_cl["dPolAngle0Fit_deg"] * mDict_cl["dFDFrms"] / mDict["dFDFth"]
     )
     mDict_cl["snrPIfitObserved"] = (
-        mDict_cl["snrPIfit"] * mDict_cl["dFDFrms"] / mDict["dFDFth"]
+        mDict_cl["snrPIfit"] / mDict_cl["dFDFrms"] * mDict["dFDFth"]
     )
 
     if verbose:

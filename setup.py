@@ -16,7 +16,7 @@ DOWNLOAD_URL = (
 )
 
 REQUIRED = [
-    "numpy<2",
+    "numpy",
     "scipy",
     "matplotlib>=3.4.0",
     "astropy",

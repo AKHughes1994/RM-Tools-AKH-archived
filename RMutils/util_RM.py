@@ -949,10 +949,10 @@ def measure_FDF_parms(
     absFDFmsked = abs(FDFmsked)
     if float(len(FDFmsked)) / len(FDF) < 0.3:
         dFDFcorMAD = MAD(np.concatenate((np.real(FDF), np.imag(FDF))))
-        dFDFrms = np.sqrt( np.mean(absFDF**2) ) # added by hughes
+        dFDFrms = np.sqrt(np.mean(np.concatenate((np.real(FDF), np.imag(FDF))) ** 2)) # added by hughes
     else:
         dFDFcorMAD = MAD(np.concatenate((np.real(FDFmsked), np.imag(FDFmsked))))
-        dFDFrms = np.sqrt( np.mean(absFDFmsked**2) )
+        dFDFrms = np.sqrt(np.mean(np.concatenate((np.real(FDFmsked), np.imag(FDFmsked))) ** 2))
 
     # Default to using the measured FDF if a noise value has not been provided
     if dFDF is None:
